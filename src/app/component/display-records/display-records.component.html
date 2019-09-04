@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+<h2>Part A</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="col-md-6">
+
+            <label>Brand Name</label>
+            <select class="form-control select-md" (change)="onBrandSelect($event)" [(ngModel)]="brandNameSelected">
+                <option *ngFor="let x of res" [ngValue]="x.BrandName">{{x.BrandName}}</option>
+            </select>
+        </div><span></span>
+        <div class="col-md-6">
+            <label>Product Type</label>
+            <select class="form-control select-md" (change)="onProductSelect($event)" [(ngModel)]="productTyeSelected">
+                <option *ngFor="let y of obtainedProductTypeArrayNew" [ngValue]="y">{{y}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <span *ngIf="brandNameSelected!=selected && productTyeSelected!=selected">
+            The selected BrandName <strong>{{brandNameSelected}}</strong> and Product Type
+            <strong>{{productTyeSelected}}</strong> has ModelName
+            <strong style="color: crimson">{{obtainedModelName[0]}} && {{obtainedModelName[1]}}</strong> and Model
+            Number <strong style="color: brown">{{obtainedModelNumber[0]}} && {{obtainedModelNumber[1]}}</strong>
+        </span>
+    </div>
+
+
+</div>
+<br>
+<hr>
+<h2>Part B</h2>
+<hr>
+<div class="row">
+    <div class="col-md-6">
+        <form [formGroup]="myForm">
+
+            <div *ngFor="let x of res1;let i=index">
+                <label>
+                    <input type="checkbox" value="x"
+                     (change)="onProductChecked(x,$event.target.checked)"
+                    
+                    >
+                    {{ x }} <br>
+                </label>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3">
+        <table>
+            <tr>
+                <strong>
+                    <td>Model Name</td>
+
+                </strong>
+            </tr>
+            <tr *ngFor="let x of checkedModelName">
+                <td>{{x}}</td>
+            </tr>
+        </table>
+
+    </div>
+    <div class="col-md-3">
+        <table>
+            <tr>
+                <strong>
+                    <td>Model Number</td>
+                </strong>
+            </tr>
+            <tr *ngFor="let x of checkedModelNumber">
+                <td>{{x}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</html>
