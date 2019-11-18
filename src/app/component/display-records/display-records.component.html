@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="col-md-6">
-        <span *ngIf="brandNameSelected!=selected && productTyeSelected!=selected">
+        <span *ngIf="brandNameSelected && productTyeSelected">
             The selected BrandName <strong>{{brandNameSelected}}</strong> and Product Type
             <strong>{{productTyeSelected}}</strong> has ModelName
             <strong style="color: crimson">{{obtainedModelName[0]}} && {{obtainedModelName[1]}}</strong> and Model

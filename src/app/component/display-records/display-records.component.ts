@@ -10,9 +10,9 @@ import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
   styleUrls: ['./display-records.component.css']
 })
 export class DisplayRecordsComponent implements OnInit {
-  private res: any;
-  private res1: any;
-  private res2: any;
+  public res: any;
+  public res1: any;
+  public res2: any;
 
   p: Number = 1;
   count: Number = 10;
