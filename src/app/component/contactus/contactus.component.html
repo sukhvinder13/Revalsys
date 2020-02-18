@@ -1,0 +1,22 @@
+<!-- form goes here -->
+<div class="container">
+  <div class="row">
+<form (ngSubmit)="processForm()">
+     <!-- name -->
+  <div class="field">
+    <input type="text" name="name"  class="form-control" placeholder="Your Name" [(ngModel)]="name">
+  </div>
+
+  <!-- email -->
+  <div class="field">
+    <input type="email" name="email"  class="form-control" placeholder="Your Email" [(ngModel)]="email">
+  </div>
+
+  <!-- message -->
+  <div class="field">
+    <textarea class="form-control" name="message" placeholder="What's on your mind?" [(ngModel)]="message"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+</form></div></div>
